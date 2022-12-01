@@ -15,7 +15,8 @@ public static void main(String[]args){
     System.out.println("enter the equation");
     String equation = scanner.nextLine();
     boolean checkEquation = checkEquation(equation);
-    if(checkEquation = false){
+    System.out.println(checkEquation);
+    if(checkEquation == false){
         System.out.println("the equation is not good");
     }
     else{
@@ -28,21 +29,13 @@ public static void main(String[]args){
         solutionsOfTheEquation(a,b,c);
     }
     }
-
-
-
-
-
-
-
-
     public static boolean checkEquation(String equation){
     boolean goodOrNot = true;
     if(equation.length() == 0){
         goodOrNot = false;
     }
     else {
-        int lengthOfEquaton = equation.length();
+        int lengthOfEquation = equation.length();
 
         String equalToZero = "=0";
 
@@ -63,9 +56,7 @@ public static void main(String[]args){
                 }
             }
         }
-
-
-        if (!equation.substring(lengthOfEquaton - 2).equals(equalToZero)) {
+        if (!equation.substring(lengthOfEquation - 2).equals(equalToZero)) {
             goodOrNot = false;
         } else if (!equation.substring(indexOfFirstX, indexOfFirstX + 3).equals(fromFirstX)) {
             goodOrNot = false;

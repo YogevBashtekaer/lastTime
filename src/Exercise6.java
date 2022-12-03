@@ -150,7 +150,6 @@ public static void main(String[]args){
             x2 = (-b - Math.sqrt(sum))/(a*2);
             System.out.println("x1 = "+x1+ " , x2 = "+x2);
         }
-        int i=1;
     }
 }
 

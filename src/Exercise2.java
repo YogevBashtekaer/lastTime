@@ -19,7 +19,6 @@ public class Exercise2 {
          else{
              phoneNumber ="";
          }
-         int i=1;
          return phoneNumber;
      }
 }

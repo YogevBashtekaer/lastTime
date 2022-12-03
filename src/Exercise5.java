@@ -100,7 +100,6 @@ public class Exercise5 {
             System.out.print("player "+ player + " win");
             win = true;
         }
-        int i=1;
         return win;
     }
 }

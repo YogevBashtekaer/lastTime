@@ -31,6 +31,7 @@ public class Exercise4 {
                 }
             }
         }
+        int i=1;
         return index;
     }
 }

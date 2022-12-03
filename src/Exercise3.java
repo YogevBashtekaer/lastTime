@@ -21,6 +21,7 @@ public class Exercise3 {
         for(int i = index ; i < newArray.length ; i++){
             newArray[i] = array[i+1];
         }
+        int i=1;
         return newArray;
     }
 }

@@ -16,5 +16,6 @@ public class Exercise1 {
                 System.out.print(array[i] +"\t");
             }
         }
+        int i=1;
     }
 }

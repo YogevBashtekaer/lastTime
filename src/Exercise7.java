@@ -160,5 +160,6 @@ public class Exercise7 {
         System.out.println("we play guess the number");
         System.out.println("you need to guess number with 4 digit and every digit between 1-6");
         System.out.println("if you try to guess number with at least 2 same digits i take from you 2 turns");
+        int i=1;
     }
 }

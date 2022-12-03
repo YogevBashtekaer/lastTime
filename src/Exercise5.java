@@ -27,7 +27,6 @@ public class Exercise5 {
             System.out.println("its equlas");
         }
     }
-
     public static void printBoard(char []board){
         for(int i = 0;i < board.length;i++){
             System.out.print(board[i]+"\t");
@@ -35,7 +34,6 @@ public class Exercise5 {
                 System.out.println();
             }
         }
-
     }
     public static boolean isAvailable(char[]board, int indexOnBoard){
         boolean freeOrNot = true;
@@ -92,7 +90,6 @@ public class Exercise5 {
         }
         return win;
     }
-
     public static boolean placeSymbolOnBoard(char []board , int index , char player){
         boolean win = false;
         char check = '-';

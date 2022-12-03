@@ -1,19 +1,14 @@
 public class Exercise3 {
-    public static void main(String[]args){
-        int[] numbers = {1,4,7,1,8,9,2,1,3,8,0};
-        //int[] numbers = {};
-        int[] newArray = arrayWithOutDoubleValue(numbers);
-        for(int i = 0 ; i < newArray.length; i++) {
-            System.out.print(newArray[i] + "\t");
-        }
-
-    }
-
     public static int[] arrayWithOutDoubleValue(int[]array){
         for(int i = 0 ; i < array.length ; i++){
             for(int j = i + 1 ; j<array.length;j++)
                 if(array[i] == array[j]){
                     array = removeNumberFromArray(array , array[j] , j);
+                    if(j < array.length){
+                        if(array[i] == array[j]){
+                            array = removeNumberFromArray(array , array[j] , j);
+                        }
+                    }
                 }
         }
         return array;

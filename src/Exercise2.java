@@ -1,8 +1,4 @@
 public class Exercise2 {
-    public static void main(String[]args){
-        String phone = "972526990440";
-        System.out.println(phoneNumber(phone));
-    }
      public static String phoneNumber(String phoneNumber){
          String firstNumbers;
          String lastNumbers;

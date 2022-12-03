@@ -2,36 +2,22 @@ import java.util.Scanner;
 public class Exercise6 {
 public static void main(String[]args){
     Scanner scanner = new Scanner(System.in);
-    /*
-    String str1 = "";
-    String str2 = "x^2+3x+5=0";
-    String str3 = "x^2-x=0";
-    String str4 = "20x^2=0";
-    String str5 = "-x^2-x-5=0";
-    String str6 = "-x^2-5x+123=0";
-    String str7 = "x+x^2=0";
-    String str8 = "-20x^2-153x+5=9";
-    */
     System.out.println("enter the equation");
     String equation = scanner.nextLine();
     boolean checkEquation = checkEquation(equation);
-    System.out.println(checkEquation);
     if(checkEquation == false){
         System.out.println("the equation is not good");
     }
     else{
         int a = returnTheParameterA(equation);
-        System.out.println(a);
         int b = returnTheParameterB(equation);
-        System.out.println(b);
         int c = returnTheParameterC(equation);
-        System.out.println(c);
         solutionsOfTheEquation(a,b,c);
     }
     }
     public static boolean checkEquation(String equation){
     boolean goodOrNot = true;
-    if(equation.length() == 0){
+    if(equation.length() == 0 || equation.length() == 1){
         goodOrNot = false;
     }
     else {
@@ -56,6 +42,12 @@ public static void main(String[]args){
                 }
             }
         }
+        int checkPlusAndMinus = 0;
+        for(int i = indexOfFirstX + 2;i<indexOfSecondX;i++){
+            if(equation.charAt(i) == '+' || equation.charAt(i) == '-'){
+                checkPlusAndMinus++;
+            }
+        }
         if (!equation.substring(lengthOfEquation - 2).equals(equalToZero)) {
             goodOrNot = false;
         } else if (!equation.substring(indexOfFirstX, indexOfFirstX + 3).equals(fromFirstX)) {
@@ -64,6 +56,14 @@ public static void main(String[]args){
                 equation.substring(indexOfSecondX, indexOfSecondX + 2).equals(secondXWithMinus) ||
                 equation.substring(indexOfSecondX, indexOfSecondX + 2).equals(secondXWithEqual))) {
             goodOrNot = false;
+        }
+        else if(checkPlusAndMinus > 1){
+            goodOrNot = false;
+        }
+        else if(indexOfFirstX > 2){
+            if(equation.charAt( indexOfFirstX - 1) == '+' || equation.charAt( indexOfFirstX - 1) == '-'){
+                goodOrNot = false;
+            }
         }
     }
     return goodOrNot;
@@ -152,5 +152,5 @@ public static void main(String[]args){
         }
 
     }
-    }
+}
 

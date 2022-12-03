@@ -1,10 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 public class Exercise7 {
-    final int DIGIT_0NE = 1;
-    final int DIGIT_TWO = 2;
-    final int DIGIT_TREE = 3;
-    final int DIGIT_FOUR = 4;
     public static void main(String[]args){
         int secretNumber = secretNumber();
         instructions();
@@ -20,7 +16,6 @@ public class Exercise7 {
             System.out.println("you lose");
         }
     }
-
     public static int secretNumber(){
         Random random = new Random();
         int digits[] = {0,0,0,0};
@@ -29,15 +24,12 @@ public class Exercise7 {
         do{
             digits[1] = random.nextInt(1, 7);
         }while (digits[0] == digits[1]);
-
         do{
             digits[2] = random.nextInt(1, 7);
         }while (digits[2] == digits[0] || digits[2] == digits[1] );
-
         do{
             digits[3] = random.nextInt(1, 7);
         }while (digits[3] == digits[0] || digits[3] == digits[1] || digits[3] ==digits[2]);
-
         for(int i = 0;i <  4;i++){
             secretNumber += digits[i];
             if(i<3){
@@ -78,7 +70,6 @@ public class Exercise7 {
 
     public static void hints(int guess,int secretNumber){
         if(checkWinner(guess,secretNumber)==true){
-
         }
         else {
             int arrayGuess[] = new int[4];
@@ -109,7 +100,6 @@ public class Exercise7 {
             System.out.println("you have " + correectLocation + " correct guess and " + halfGuess + " half guess");
         }
     }
-
     public static int fineThePlayer(int guess,int turnLeft){
         int arrayGuess[] = new int[4];
         int toEqualTurnLeft = turnLeft;
@@ -131,7 +121,6 @@ public class Exercise7 {
         }
         return turnLeft;
     }
-
     public static int getGuess(){
         Scanner scan = new Scanner(System.in);
         int guess;
@@ -158,7 +147,6 @@ public class Exercise7 {
         }while(checkNumber == false);
         return guess;
     }
-
     public static boolean checkWinner(int guess,int secretNumber){
         boolean winOrLoss = false;
         if (guess == secretNumber) {
@@ -168,7 +156,6 @@ public class Exercise7 {
         }
         return winOrLoss;
     }
-
     public static void instructions(){
         System.out.println("we play guess the number");
         System.out.println("you need to guess number with 4 digit and every digit between 1-6");
